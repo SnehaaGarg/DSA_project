@@ -1,13 +1,13 @@
 #include "graph.h"
 #include <string.h>
 
-// Global graph data (defined here, extern in header)
+
 int adj_list[MAX_NODES][MAX_NODES];
 char node_names[MAX_NODES][20] = {
     "Dehradun", "Haridwar", "Rishikesh", "Mussoorie", "Haldwani", "Nainital", "Almora",
     "Pithoragarh", "Rudraprayag", "Kedarnath", "Badrinath", "Chamoli", "Uttarkashi",
     "Roorkee", "Kashipur", "Bageshwar", "Ranikhet", "Haldwani", "Pauri", "Tehri"
-};  // Note: Haldwani duplicated for demo; fix in production if needed
+};  
 
 double lat_lng[MAX_NODES][2] = {
     {30.3165, 78.0322}, {29.9457, 78.1689}, {30.0852, 78.2877}, {30.4597, 78.0695}, {29.2180, 79.5196},
@@ -17,15 +17,13 @@ double lat_lng[MAX_NODES][2] = {
 };
 
 void init_graph(void) {
-    // Initialize adjacency matrix to INF
+
     for (int i = 0; i < MAX_NODES; i++) {
         for (int j = 0; j < MAX_NODES; j++) {
             adj_list[i][j] = INF;
         }
-        adj_list[i][i] = 0;  // Self-distance 0
+        adj_list[i][i] = 0;  
     }
-
-    // Uttarakhand roads (undirected, weighted by km; sample from real highways)
     // Garhwal region
     adj_list[0][1] = adj_list[1][0] = 50;   // Dehradun-Haridwar (NH34)
     adj_list[0][2] = adj_list[2][0] = 25;   // Dehradun-Rishikesh (NH7)
@@ -53,7 +51,7 @@ void init_graph(void) {
     adj_list[13][14] = adj_list[14][13] = 50; // Roorkee-Kashipur (NH9)
     adj_list[14][4] = adj_list[4][14] = 60;   // Kashipur-Haldwani (NH9)
     adj_list[4][6] = adj_list[6][4] = 100;    // Haldwani-Almora (via Kaladhungi)
-    // Add more edges as needed for full connectivity (graph is now connected for most pairs)
 
-    // Function ends here - all braces closed
+  
 }
+
