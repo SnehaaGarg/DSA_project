@@ -2,7 +2,7 @@
 #include "haversine.h"
 
 double degrees_to_radians(double degrees) {
-    return degrees * M_PI / 180.0;
+    return degrees * M_PI / 180.0; 
 }
 
 double haversine_distance(double lat1, double lon1, double lat2, double lon2) {
@@ -22,3 +22,4 @@ double haversine_distance(double lat1, double lon1, double lat2, double lon2) {
     
     return EARTH_RADIUS_KM * c;
 }
+
