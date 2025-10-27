@@ -4,7 +4,7 @@
 
 int find_min_distance_node(PathInfo path_info[], int node_count) {
     int min_index = -1;
-    double min_distance = INF;
+    double min_distance = INF; 
     
     for (int i = 0; i < node_count; i++) {
         if (!path_info[i].visited && path_info[i].distance < min_distance) {
@@ -65,3 +65,4 @@ void dijkstra_shortest_path(Graph *graph, int start_node, int end_node,PathInfo 
         path_nodes[*path_length - i - 1] = temp;
     }
 }
+
